@@ -1,6 +1,6 @@
 <nav>
 	<div class="nav-wrapper black">
-		<a href="index.html" class="brand-logo hide-on-small-only"><img src="../assets/images/logo.png" class="logo"
+		<a routerLink="" class="brand-logo hide-on-small-only"><img src="../assets/images/logo.png" class="logo"
 				alt="sport plus" /></a>
 		<form class="right">
 			<div class="input-field">
@@ -36,7 +36,7 @@
 				</a>
 			</li>
 			<li *ngIf="!isAuth">
-				<a class="waves-effect waves-light">
+				<a class="waves-effect waves-light" routerLink="login">
 					Se connecter<i class="material-icons left">exit_to_app</i>
 				</a>
 			</li>
