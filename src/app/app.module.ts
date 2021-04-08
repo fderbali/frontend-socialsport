@@ -6,13 +6,21 @@ import { AppComponent } from './app.component';
 import { BarreNavigationComponent } from './components/barre-navigation/barre-navigation.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
+import { ActivitesComponent } from './components/activites/activites.component';
+import { MembresComponent } from './components/membres/membres.component';
+import { CourrielsComponent } from './components/courriels/courriels.component';
+import { MyprofileComponent } from './components/myprofile/myprofile.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		BarreNavigationComponent,
 		FooterComponent,
-		LoginComponent
+		LoginComponent,
+  ActivitesComponent,
+  MembresComponent,
+  CourrielsComponent,
+  MyprofileComponent
 	],
 	imports: [
 		BrowserModule,
