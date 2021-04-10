@@ -7,6 +7,9 @@ import { CourrielsComponent } from './components/courriels/courriels.component';
 import { MyprofileComponent } from './components/myprofile/myprofile.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FormAddActiviteComponent } from './components/form-add-activite/form-add-activite.component';
+import { CourrielComponent } from './components/courriel/courriel.component';
+import { MembreComponent } from './components/membre/membre.component';
+import { ActiviteComponent } from './components/activite/activite.component';
 
 const routes: Routes = [
 	{ path: "", component: ActivitesComponent },
@@ -16,7 +19,10 @@ const routes: Routes = [
 	{ path: "login", component: LoginComponent },
 	{ path: "myprofile", component: MyprofileComponent },
 	{ path: "register", component: RegisterComponent },
-	{ path: "add-activite", component: FormAddActiviteComponent }
+	{ path: "add-activite", component: FormAddActiviteComponent },
+	{ path: "activite/:id", component: ActiviteComponent },
+	{ path: "membre/:id", component: MembreComponent },
+	{ path: "courriel/:id", component: CourrielComponent }
 ];
 
 @NgModule({

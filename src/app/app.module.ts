@@ -12,6 +12,9 @@ import { CourrielsComponent } from './components/courriels/courriels.component';
 import { MyprofileComponent } from './components/myprofile/myprofile.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FormAddActiviteComponent } from './components/form-add-activite/form-add-activite.component';
+import { ActiviteComponent } from './components/activite/activite.component';
+import { MembreComponent } from './components/membre/membre.component';
+import { CourrielComponent } from './components/courriel/courriel.component';
 
 @NgModule({
 	declarations: [
@@ -24,7 +27,10 @@ import { FormAddActiviteComponent } from './components/form-add-activite/form-ad
 		CourrielsComponent,
 		MyprofileComponent,
 		RegisterComponent,
-  FormAddActiviteComponent
+  FormAddActiviteComponent,
+  ActiviteComponent,
+  MembreComponent,
+  CourrielComponent
 	],
 	imports: [
 		BrowserModule,
