@@ -10,6 +10,7 @@ import { FormAddActiviteComponent } from './components/form-add-activite/form-ad
 import { CourrielComponent } from './components/courriel/courriel.component';
 import { MembreComponent } from './components/membre/membre.component';
 import { ActiviteComponent } from './components/activite/activite.component';
+import { FourOFourComponent } from './components/four-o-four/four-o-four.component';
 
 const routes: Routes = [
 	{ path: "", component: ActivitesComponent },
@@ -22,7 +23,9 @@ const routes: Routes = [
 	{ path: "add-activite", component: FormAddActiviteComponent },
 	{ path: "activite/:id", component: ActiviteComponent },
 	{ path: "membre/:id", component: MembreComponent },
-	{ path: "courriel/:id", component: CourrielComponent }
+	{ path: "courriel/:id", component: CourrielComponent },
+	{ path: "not-found", component: FourOFourComponent },
+	{ path: "**", redirectTo: '/not-found' }
 ];
 
 @NgModule({

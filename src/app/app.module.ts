@@ -15,6 +15,7 @@ import { FormAddActiviteComponent } from './components/form-add-activite/form-ad
 import { ActiviteComponent } from './components/activite/activite.component';
 import { MembreComponent } from './components/membre/membre.component';
 import { CourrielComponent } from './components/courriel/courriel.component';
+import { FourOFourComponent } from './components/four-o-four/four-o-four.component';
 
 @NgModule({
 	declarations: [
@@ -30,7 +31,8 @@ import { CourrielComponent } from './components/courriel/courriel.component';
   FormAddActiviteComponent,
   ActiviteComponent,
   MembreComponent,
-  CourrielComponent
+  CourrielComponent,
+  FourOFourComponent
 	],
 	imports: [
 		BrowserModule,
