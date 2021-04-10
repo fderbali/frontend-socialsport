@@ -10,32 +10,32 @@
 			</div>
 		</form>
 		<ul class="right hide-on-med-and-down">
-			<li *ngIf="isAuth">
-				<a class="waves-effect waves-light">
+			<li *ngIf="isAuth" routerLinkActive="active">
+				<a class="waves-effect waves-light" routerLink="add-activite">
 					Ajouter activité<i class="material-icons left">add_circle_outline</i>
 				</a>
 			</li>
-			<li>
+			<li routerLinkActive="active">
 				<a class="waves-effect waves-light" routerLink="activites">
 					Activités<i class="material-icons left">directions_walk</i>
 				</a>
 			</li>
-			<li *ngIf="isAuth">
+			<li *ngIf="isAuth" routerLinkActive="active">
 				<a class="waves-effect waves-light" routerLink="membres">
 					Membres<i class="material-icons left">people</i>
 				</a>
 			</li>
-			<li *ngIf="isAuth">
+			<li *ngIf="isAuth" routerLinkActive="active">
 				<a class="waves-effect waves-light" routerLink="courriels">
 					Courriels<i class="material-icons left">email</i>
 				</a>
 			</li>
-			<li *ngIf="!isAuth">
+			<li *ngIf="!isAuth" routerLinkActive="active">
 				<a class="waves-effect waves-light" routerLink="login">
 					Se connecter<i class="material-icons left">exit_to_app</i>
 				</a>
 			</li>
-			<li>
+			<li routerLinkActive="active">
 				<a class="waves-effect waves-light dropdown-trigger" href="#!" data-target="dropdown1">
 					<i class="material-icons right">arrow_drop_down</i>
 					Mon profil

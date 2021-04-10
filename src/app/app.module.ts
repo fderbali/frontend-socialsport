@@ -11,6 +11,7 @@ import { MembresComponent } from './components/membres/membres.component';
 import { CourrielsComponent } from './components/courriels/courriels.component';
 import { MyprofileComponent } from './components/myprofile/myprofile.component';
 import { RegisterComponent } from './components/register/register.component';
+import { FormAddActiviteComponent } from './components/form-add-activite/form-add-activite.component';
 
 @NgModule({
 	declarations: [
@@ -22,7 +23,8 @@ import { RegisterComponent } from './components/register/register.component';
 		MembresComponent,
 		CourrielsComponent,
 		MyprofileComponent,
-		RegisterComponent
+		RegisterComponent,
+  FormAddActiviteComponent
 	],
 	imports: [
 		BrowserModule,

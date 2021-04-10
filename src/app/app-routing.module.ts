@@ -6,6 +6,7 @@ import { MembresComponent } from './components/membres/membres.component';
 import { CourrielsComponent } from './components/courriels/courriels.component';
 import { MyprofileComponent } from './components/myprofile/myprofile.component';
 import { RegisterComponent } from './components/register/register.component';
+import { FormAddActiviteComponent } from './components/form-add-activite/form-add-activite.component';
 
 const routes: Routes = [
 	{ path: "", component: ActivitesComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
 	{ path: "courriels", component: CourrielsComponent },
 	{ path: "login", component: LoginComponent },
 	{ path: "myprofile", component: MyprofileComponent },
-	{ path: "register", component: RegisterComponent }
+	{ path: "register", component: RegisterComponent },
+	{ path: "add-activite", component: FormAddActiviteComponent }
 ];
 
 @NgModule({
