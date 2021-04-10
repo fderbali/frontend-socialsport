@@ -10,6 +10,7 @@ import { ActivitesComponent } from './components/activites/activites.component';
 import { MembresComponent } from './components/membres/membres.component';
 import { CourrielsComponent } from './components/courriels/courriels.component';
 import { MyprofileComponent } from './components/myprofile/myprofile.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
 	declarations: [
@@ -17,10 +18,11 @@ import { MyprofileComponent } from './components/myprofile/myprofile.component';
 		BarreNavigationComponent,
 		FooterComponent,
 		LoginComponent,
-  ActivitesComponent,
-  MembresComponent,
-  CourrielsComponent,
-  MyprofileComponent
+		ActivitesComponent,
+		MembresComponent,
+		CourrielsComponent,
+		MyprofileComponent,
+		RegisterComponent
 	],
 	imports: [
 		BrowserModule,

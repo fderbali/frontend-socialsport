@@ -6,3 +6,7 @@
 #contenu_page {
 	min-height: 515px;
 }
+
+.datepicker-date-display {
+	background-color: #ef5350 !important;
+}
