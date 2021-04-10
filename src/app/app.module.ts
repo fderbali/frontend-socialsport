@@ -16,6 +16,8 @@ import { ActiviteComponent } from './components/activite/activite.component';
 import { MembreComponent } from './components/membre/membre.component';
 import { CourrielComponent } from './components/courriel/courriel.component';
 import { FourOFourComponent } from './components/four-o-four/four-o-four.component';
+import { AuthService } from './services/auth.service';
+import { AuthGuardService } from './services/auth-guard.service';
 
 @NgModule({
 	declarations: [
@@ -28,17 +30,20 @@ import { FourOFourComponent } from './components/four-o-four/four-o-four.compone
 		CourrielsComponent,
 		MyprofileComponent,
 		RegisterComponent,
-  FormAddActiviteComponent,
-  ActiviteComponent,
-  MembreComponent,
-  CourrielComponent,
-  FourOFourComponent
+		FormAddActiviteComponent,
+		ActiviteComponent,
+		MembreComponent,
+		CourrielComponent,
+		FourOFourComponent
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule
 	],
-	providers: [],
+	providers: [
+		AuthService,
+		AuthGuardService
+	],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

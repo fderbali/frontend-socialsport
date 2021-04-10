@@ -35,7 +35,7 @@
 					Se connecter<i class="material-icons left">exit_to_app</i>
 				</a>
 			</li>
-			<li routerLinkActive="active">
+			<li routerLinkActive="active" *ngIf="isAuth">
 				<a class="waves-effect waves-light dropdown-trigger" href="#!" data-target="dropdown1">
 					<i class="material-icons right">arrow_drop_down</i>
 					Mon profil

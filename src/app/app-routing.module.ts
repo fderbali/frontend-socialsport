@@ -11,19 +11,20 @@ import { CourrielComponent } from './components/courriel/courriel.component';
 import { MembreComponent } from './components/membre/membre.component';
 import { ActiviteComponent } from './components/activite/activite.component';
 import { FourOFourComponent } from './components/four-o-four/four-o-four.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
 	{ path: "", component: ActivitesComponent },
-	{ path: "activites", component: ActivitesComponent },
-	{ path: "membres", component: MembresComponent },
-	{ path: "courriels", component: CourrielsComponent },
+	{ path: "activites", canActivate: [AuthGuardService], component: ActivitesComponent },
+	{ path: "membres", canActivate: [AuthGuardService], component: MembresComponent },
+	{ path: "courriels", canActivate: [AuthGuardService], component: CourrielsComponent },
 	{ path: "login", component: LoginComponent },
-	{ path: "myprofile", component: MyprofileComponent },
+	{ path: "myprofile", canActivate: [AuthGuardService], component: MyprofileComponent },
 	{ path: "register", component: RegisterComponent },
-	{ path: "add-activite", component: FormAddActiviteComponent },
-	{ path: "activite/:id", component: ActiviteComponent },
-	{ path: "membre/:id", component: MembreComponent },
-	{ path: "courriel/:id", component: CourrielComponent },
+	{ path: "add-activite", canActivate: [AuthGuardService], component: FormAddActiviteComponent },
+	{ path: "activite/:id", canActivate: [AuthGuardService], component: ActiviteComponent },
+	{ path: "membre/:id", canActivate: [AuthGuardService], component: MembreComponent },
+	{ path: "courriel/:id", canActivate: [AuthGuardService], component: CourrielComponent },
 	{ path: "not-found", component: FourOFourComponent },
 	{ path: "**", redirectTo: '/not-found' }
 ];
