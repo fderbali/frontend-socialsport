@@ -20,19 +20,14 @@
 					Activités<i class="material-icons left">directions_walk</i>
 				</a>
 			</li>
-			<li>
+			<li *ngIf="isAuth">
 				<a class="waves-effect waves-light" routerLink="membres">
 					Membres<i class="material-icons left">people</i>
 				</a>
 			</li>
-			<li>
+			<li *ngIf="isAuth">
 				<a class="waves-effect waves-light" routerLink="courriels">
 					Courriels<i class="material-icons left">email</i>
-				</a>
-			</li>
-			<li *ngIf="isAuth">
-				<a class="waves-effect waves-light" routerLink="myprofile">
-					Mon profil<i class="material-icons left">person_outline</i>
 				</a>
 			</li>
 			<li *ngIf="!isAuth">
@@ -40,6 +35,19 @@
 					Se connecter<i class="material-icons left">exit_to_app</i>
 				</a>
 			</li>
+			<li>
+				<a class="waves-effect waves-light dropdown-trigger" href="#!" data-target="dropdown1">
+					<i class="material-icons right">arrow_drop_down</i>
+					Mon profil
+					<i class="material-icons left">person_outline</i>
+				</a>
+			</li>
 		</ul>
 	</div>
 </nav>
+
+<ul id="dropdown1" class="dropdown-content">
+	<li><a routerLink="my-activities">Mes activités</a></li>
+	<li><a routerLink="myprofile">Mon profil</a></li>
+	<li><a routerLink="logout">Déconnexion</a></li>
+</ul>

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-
+declare let M: any;
 @Component({
 	selector: 'app-barre-navigation',
 	templateUrl: './barre-navigation.component.html',
@@ -10,6 +10,10 @@ export class BarreNavigationComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit(): void {
+		let elemDropdown = document.querySelectorAll('.dropdown-trigger');
+		M.Dropdown.init(elemDropdown, {
+			coverTrigger: false
+		});
 	}
 
 }
