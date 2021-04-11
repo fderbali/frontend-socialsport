@@ -15,14 +15,14 @@ import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
 	{ path: "", component: ActivitesComponent },
-	{ path: "activites", canActivate: [AuthGuardService], component: ActivitesComponent },
+	{ path: "activites", component: ActivitesComponent },
 	{ path: "membres", canActivate: [AuthGuardService], component: MembresComponent },
 	{ path: "courriels", canActivate: [AuthGuardService], component: CourrielsComponent },
 	{ path: "login", component: LoginComponent },
 	{ path: "myprofile", canActivate: [AuthGuardService], component: MyprofileComponent },
 	{ path: "register", component: RegisterComponent },
 	{ path: "add-activite", canActivate: [AuthGuardService], component: FormAddActiviteComponent },
-	{ path: "activite/:id", canActivate: [AuthGuardService], component: ActiviteComponent },
+	{ path: "activite/:id", component: ActiviteComponent },
 	{ path: "membre/:id", canActivate: [AuthGuardService], component: MembreComponent },
 	{ path: "courriel/:id", canActivate: [AuthGuardService], component: CourrielComponent },
 	{ path: "not-found", component: FourOFourComponent },
