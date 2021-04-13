@@ -30,13 +30,14 @@ export class RegisterComponent implements OnInit {
 		this.authService.register(form.value).then(
 			(message) => {
 				if (this.authService.isAuth) {
-					M.toast({ html: message, classes: 'rounded green' });
+					M.toast({ html: message, classes: 'rounded green', displayLength: 7000 });
 					this.router.navigate([""]);
 				} else {
-					M.toast({ html: message, classes: 'rounded red' });
+					M.toast({ html: message, classes: 'rounded red', displayLength: 7000 });
 				}
-			},
-			(error) => { }
-		);
+			}
+		).catch((error) => {
+			M.toast({ html: "Une erreur s'est produite, veuillez re-essayer plus tard !", classes: 'rounded red', displayLength: 7000 });
+		});
 	}
 }

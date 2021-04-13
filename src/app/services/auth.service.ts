@@ -33,20 +33,12 @@ export class AuthService {
 					(response) => {
 						this.isAuth = response.success;
 						this.message = response.message;
-						if (this.message) {
-							resolve(this.message)
-						} else {
-							reject("Une erreur s'est produite");
-						}
+						resolve(this.message)
 					},
 					(error) => {
 						this.isAuth = false;
 						this.message = error.message;
-						if (this.message) {
-							resolve(this.message)
-						} else {
-							reject("Une erreur s'est produite");
-						}
+						reject(this.message)
 					}
 				);
 		});
