@@ -18,6 +18,8 @@ import { CourrielComponent } from './components/courriel/courriel.component';
 import { FourOFourComponent } from './components/four-o-four/four-o-four.component';
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
 	declarations: [
@@ -38,7 +40,9 @@ import { AuthGuardService } from './services/auth-guard.service';
 	],
 	imports: [
 		BrowserModule,
-		AppRoutingModule
+		AppRoutingModule,
+		FormsModule,
+		HttpClientModule
 	],
 	providers: [
 		AuthService,

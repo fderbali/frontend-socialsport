@@ -9,24 +9,14 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent implements OnInit {
 	title = 'Sport plus';
-	isAuth: boolean = true;
+	isAuth: boolean = this.authService.isAuth;;
 	constructor(private authService: AuthService, private router: Router) { }
 
 	ngOnInit(): void {
 		this.isAuth = this.authService.isAuth;
 	}
 
-	onSignIn() {
-		this.authService.signIn().then(
-			() => {
-				this.isAuth = this.authService.isAuth;
-				this.router.navigate(["/myprofile"]);
-			}
-		);
-	}
-
-	onSignOut() {
-		this.authService.signOut();
+	ngDoCheck() {
 		this.isAuth = this.authService.isAuth;
 	}
 }

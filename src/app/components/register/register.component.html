@@ -1,57 +1,51 @@
 <div class="row">
-	<form class="col s12 hoverable register-form card">
+	<form class="col s12 hoverable register-form card" (ngSubmit)="onSubmit(f)" #f="ngForm">
 		<div class="row">
 			<div class="input-field col s6">
-				<input id="first_name" type="text" class="validate">
-				<label for="first_name">Nom</label>
+				<input id="nom" type="text" name="nom" ngModel required>
+				<label for="nom">Nom</label>
 			</div>
 			<div class="input-field col s6">
-				<input id="last_name" type="text" class="validate">
-				<label for="last_name">Prénom</label>
+				<input id="prenom" type="text" name="prenom" class="validate" ngModel required>
+				<label for="prenom">Prénom</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s6">
-				<input id="email" type="email" class="validate">
+				<input id="email" type="email" name="email" class="validate" ngModel required>
 				<label for="email">Email</label>
 			</div>
 			<div class="input-field col s6">
-				<input id="dateofbirth" type="text" class="validate datepicker">
-				<label for="dateofbirth">Date de naissance</label>
+				<input id="date_de_naissance" type="text" name="date_de_naissance" class="validate datepicker"
+					[(ngModel)]="birthdate">
+				<label for="date_de_naissance">Date de naissance</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s6">
-				<input id="password" type="password" class="validate">
-				<label for="email">Mot de passe</label>
+				<input id="mot_de_passe" type="password" name="mot_de_passe" class="validate" ngModel required>
+				<label for="mot_de_passe">Mot de passe</label>
 			</div>
 			<div class="input-field col s6">
-				<input id="confirm-password" type="password" class="validate">
+				<input id="confirm-password" type="password" name="confirm_mot_de_passe" class="validate" ngModel
+					required>
 				<label for="confirm-password">Confirmer le mot de passe</label>
 			</div>
 		</div>
 		<div class="row">
-			<div class="input-field col s6">
-				<p>
-					<label>
-						<input name="genre" type="radio" />
-						<span>Masculin</span>
-					</label>
-				</p>
-			</div>
-			<div class="input-field col s6">
-				<p>
-					<label>
-						<input name="genre" type="radio" />
-						<span>Féminin</span>
-					</label>
-				</p>
+			<div class="col s6">
+				<label>Genre</label>
+				<select name="genre" id="genre" class="browser-default" ngModel required>
+					<option value="">Sélectionnez</option>
+					<option value="M">Masculin</option>
+					<option value="F">Féminin</option>
+				</select>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s4 push-s4 push-m4 push-l4">
-				<a class="waves-effect waves-light btn-large red lighten-1">Valider <i
-						class="material-icons right">send</i></a>
+				<button type="submit" class="waves-effect waves-light btn-large red lighten-1"
+					[disabled]="f.invalid">Valider <i class="material-icons right">send</i></button>
 			</div>
 		</div>
 	</form>
