@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
-
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+declare let M: any;
 @Component({
 	selector: 'app-login',
 	templateUrl: './login.component.html',
@@ -8,21 +10,32 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-	constructor(private authService: AuthService) { }
+	constructor(private authService: AuthService, private router: Router) { }
 
-	ngOnInit(): void {
-	}
-	/*onSignIn() {
-		this.authService.signIn().then(
-			() => {
-				this.isAuth = this.authService.isAuth;
-				this.router.navigate(["/myprofile"]);
+	ngOnInit(): void { }
+
+	onSignIn(form: NgForm) {
+		this.authService.signIn(form.value).then(
+			(message) => {
+				console.log(message);
+				if (this.authService.isAuth) {
+					M.toast({ html: message, classes: 'rounded green', displayLength: 7000 });
+					this.router.navigate(["myprofile"]).then(() => {
+						setTimeout(() => {
+							let elemDropdown = document.querySelectorAll('.dropdown-trigger');
+							M.Dropdown.init(elemDropdown, {
+								coverTrigger: false
+							});
+						}, 1000);
+					});
+				} else {
+					M.toast({ html: message, classes: 'rounded red', displayLength: 7000 });
+				}
 			}
-		);
-	}
+		).catch((error) => {
+			M.toast({ html: "Une erreur s'est produite, veuillez re-essayer plus tard !", classes: 'rounded red', displayLength: 7000 });
+		}).finally(() => {
+		});
 
-	onSignOut() {
-		this.authService.signOut();
-		this.isAuth = this.authService.isAuth;
-	}*/
+	}
 }

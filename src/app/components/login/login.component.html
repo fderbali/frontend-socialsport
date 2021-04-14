@@ -1,25 +1,28 @@
 <div class="row">
 	<div class="col s6 m6 l6 push-s3 push-m3 push-l3">
 		<div class="card card-panel hoverable">
-			<div class="card-action header_connexion red lighten-1 white-text center-align">
-				<h3>Connexion</h3>
-			</div>
-			<div class="card-content">
-				<div class="form-field">
-					<label for="username">Nom d'utilisateur</label>
-					<input type="text" id="username">
-				</div><br>
+			<form (ngSubmit)="onSignIn(flogin)" #flogin="ngForm">
+				<div class="card-action header_connexion red lighten-1 white-text center-align">
+					<h3>Connexion</h3>
+				</div>
+				<div class="card-content">
+					<div class="form-field">
+						<label for="username">Nom d'utilisateur</label>
+						<input type="text" name="email" id="username" ngModel>
+					</div><br>
 
-				<div class="form-field">
-					<label for="password">Mot de passe</label>
-					<input type="password" id="password">
-				</div><br>
+					<div class="form-field">
+						<label for="password">Mot de passe</label>
+						<input type="password" name="password" id="password" ngModel>
+					</div><br>
 
-				<div class="form-field">
-					<button class="btn-large waves-effect waves-dark red" style="width:100%;">Login</button>
-				</div><br>
-				<small>Pas encore membre ? <a routerLink="/register">S'inscrire</a></small>
-			</div>
+					<div class="form-field">
+						<button type="submit" class="btn-large waves-effect waves-dark red"
+							style="width:100%;">Login</button>
+					</div><br>
+					<small>Pas encore membre ? <a routerLink="/register">S'inscrire</a></small>
+				</div>
+			</form>
 		</div>
 	</div>
 </div>
