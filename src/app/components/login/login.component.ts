@@ -17,7 +17,6 @@ export class LoginComponent implements OnInit {
 	onSignIn(form: NgForm) {
 		this.authService.signIn(form.value).then(
 			(message) => {
-				console.log(message);
 				if (this.authService.isAuth) {
 					M.toast({ html: message, classes: 'rounded green', displayLength: 7000 });
 					this.router.navigate(["myprofile"]).then(() => {
