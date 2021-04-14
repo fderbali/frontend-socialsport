@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 declare let M: any;
 @Component({
 	selector: 'app-barre-navigation',
@@ -7,13 +9,19 @@ declare let M: any;
 })
 export class BarreNavigationComponent implements OnInit {
 	@Input() isAuth: boolean = false;
-	constructor() { }
+	@Input() userConnected: string = "";
+	constructor(private authService: AuthService, private router: Router) { }
 
 	ngOnInit(): void {
-		let elemDropdown = document.querySelectorAll('.dropdown-trigger');
-		M.Dropdown.init(elemDropdown, {
-			coverTrigger: false
-		});
 	}
 
+	ngDoCheck(): void {
+	}
+
+	onLogout() {
+		this.authService.signOut().then(() => {
+			this.router.navigate([""]).then(() => {
+			});
+		});
+	}
 }

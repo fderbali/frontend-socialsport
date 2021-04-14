@@ -9,7 +9,8 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent implements OnInit {
 	title = 'Sport plus';
-	isAuth: boolean = this.authService.isAuth;;
+	isAuth: boolean = this.authService.isAuth;
+	userConnected: string = "";
 	constructor(private authService: AuthService, private router: Router) { }
 
 	ngOnInit(): void {
@@ -18,5 +19,6 @@ export class AppComponent implements OnInit {
 
 	ngDoCheck() {
 		this.isAuth = this.authService.isAuth;
+		this.userConnected = this.authService.userConnected;
 	}
 }

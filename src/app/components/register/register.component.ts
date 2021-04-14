@@ -31,13 +31,21 @@ export class RegisterComponent implements OnInit {
 			(message) => {
 				if (this.authService.isAuth) {
 					M.toast({ html: message, classes: 'rounded green', displayLength: 7000 });
-					this.router.navigate([""]);
+					this.router.navigate([""]).then(() => {
+						setTimeout(() => {
+							let elemDropdown = document.querySelectorAll('.dropdown-trigger');
+							M.Dropdown.init(elemDropdown, {
+								coverTrigger: false
+							});
+						}, 1000);
+					});
 				} else {
 					M.toast({ html: message, classes: 'rounded red', displayLength: 7000 });
 				}
 			}
 		).catch((error) => {
 			M.toast({ html: "Une erreur s'est produite, veuillez re-essayer plus tard !", classes: 'rounded red', displayLength: 7000 });
+		}).finally(() => {
 		});
 	}
 }

@@ -8,6 +8,7 @@ import { RegsiterResponseModelModule } from 'src/app/models/regsiter-response-mo
 export class AuthService {
 	isAuth: boolean = false;
 	message: string = "";
+	userConnected: string = "";
 	constructor(private httpClient: HttpClient) {
 	}
 
@@ -23,7 +24,10 @@ export class AuthService {
 	}
 
 	signOut() {
-		this.isAuth = false;
+		return new Promise((resolve) => {
+			this.isAuth = false;
+			resolve(true);
+		});
 	}
 
 	register(values: any) {
@@ -33,7 +37,8 @@ export class AuthService {
 					(response) => {
 						this.isAuth = response.success;
 						this.message = response.message;
-						resolve(this.message)
+						this.userConnected = values.email;
+						resolve(this.message);
 					},
 					(error) => {
 						this.isAuth = false;

@@ -38,7 +38,7 @@
 			<li routerLinkActive="active" *ngIf="isAuth">
 				<a class="waves-effect waves-light dropdown-trigger" href="#!" data-target="dropdown1">
 					<i class="material-icons right">arrow_drop_down</i>
-					Mon profil
+					{{ userConnected }}
 					<i class="material-icons left">person_outline</i>
 				</a>
 			</li>
@@ -49,5 +49,5 @@
 <ul id="dropdown1" class="dropdown-content">
 	<li><a routerLink="my-activities">Mes activités</a></li>
 	<li><a routerLink="myprofile">Mon profil</a></li>
-	<li><a routerLink="logout">Déconnexion</a></li>
+	<li><a (click)="onLogout()">Déconnexion</a></li>
 </ul>
