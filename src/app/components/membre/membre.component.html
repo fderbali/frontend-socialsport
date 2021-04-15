@@ -4,17 +4,20 @@
 			<div class="card-content">
 				<span class="card-title">{{ membre.prenom}} {{ membre.nom }}</span>
 				<ul>
-					<li>
+					<li *ngIf="membre.is_public == 'Y'">
 						<span *ngIf="membre.sexe == 'M'">Homme</span>
 						<span *ngIf="membre.sexe == 'F'">Femme</span>,
 						{{ age }} ans
 					</li>
-					<li *ngIf="membre.is_connected == 'Y'">Ce membre est présentement connecté</li>
-					<li *ngIf="membre.is_connected == 'N'">Ce membre est présentement déconnecté</li>
-					<li class="orange-text">{{ membre.email }}</li>
+					<li *ngIf="membre.is_connected == 'Y'" class='green-text'>Ce membre est présentement connecté</li>
+					<li *ngIf="membre.is_connected == 'N'" class='red-text'>Ce membre est présentement déconnecté</li>
+					<li *ngIf="membre.is_public == 'Y'" class="orange-text">{{ membre.email }}</li>
+
+					<li *ngIf="membre.is_public == 'Y'">Profil public</li>
+					<li *ngIf="membre.is_public == 'N'">Profil privé</li>
 				</ul>
 			</div>
-			<div class="card-action">
+			<div class="card-action" *ngIf="membre.is_public == 'Y'">
 				<a routerLink="/membre/{{ membre.id }}/activites">Activités du membre</a>
 			</div>
 		</div>
