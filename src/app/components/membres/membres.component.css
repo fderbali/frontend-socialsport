@@ -1,0 +1,5 @@
+.collection .collection-item.avatar .secondary-content {
+	position: absolute;
+	top: 30px !important;
+	right: 16px;
+}

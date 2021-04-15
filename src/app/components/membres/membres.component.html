@@ -1,1 +1,13 @@
-<p>membres works!</p>
+<ul class="collection">
+	<li class="collection-item avatar" *ngFor="let membre of(membres)">
+		<i class="material-icons circle">account_circle</i>
+		<span class="title">{{ membre.nom }}</span>
+		<p>
+			{{ membre.prenom }} <br />
+			{{ membre.email }}
+		</p>
+		<a routerLink="/membre/{{ membre.id }}" class="secondary-content">
+			<i class="material-icons">send</i>
+		</a>
+	</li>
+</ul>

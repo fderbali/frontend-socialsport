@@ -7,7 +7,7 @@ import { LoginResponse } from '../models/login-response-model/login-response';
 	providedIn: 'root'
 })
 export class AuthService {
-	isAuth: boolean = false;
+	isAuth: boolean = true;
 	message: string = "";
 	userConnected: string = "";
 	constructor(private httpClient: HttpClient) {

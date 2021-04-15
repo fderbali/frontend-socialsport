@@ -1,1 +1,27 @@
-<p>membre works!</p>
+<div class="row">
+	<div class="col s6 m6 l6 push-s3 push-m3 push-l3">
+		<div class="card darken-1">
+			<div class="card-content">
+				<span class="card-title">{{ membre.prenom}} {{ membre.nom }}</span>
+				<ul>
+					<li>
+						<span *ngIf="membre.sexe == 'M'">Homme</span>
+						<span *ngIf="membre.sexe == 'F'">Femme</span>,
+						{{ age }} ans
+					</li>
+					<li *ngIf="membre.is_connected == 'Y'">Ce membre est présentement connecté</li>
+					<li *ngIf="membre.is_connected == 'N'">Ce membre est présentement déconnecté</li>
+					<li class="orange-text">{{ membre.email }}</li>
+				</ul>
+			</div>
+			<div class="card-action">
+				<a routerLink="/membre/{{ membre.id }}/activites">Activités du membre</a>
+			</div>
+		</div>
+		<p class="center-align">
+			<a routerLink='/membres' class="btn waves-effect waves-light" type="submit" name="action">Liste des membres
+				<i class="material-icons right">send</i>
+			</a>
+		</p>
+	</div>
+</div>
