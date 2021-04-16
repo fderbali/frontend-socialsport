@@ -1,0 +1,16 @@
+textarea {
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+textarea:focus {
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+.register-form {
+	padding: 50px 50px 0 50px;
+}
+.btn-large {
+	width: 100%;
+}

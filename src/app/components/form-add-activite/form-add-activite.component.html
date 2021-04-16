@@ -1,1 +1,52 @@
-<p>form-add-activite works!</p>
+<div class="row">
+	<form class="col s12 hoverable register-form card" (ngSubmit)="onSubmit(faddactivite)" #faddactivite="ngForm">
+		<div class="row">
+			<div class="input-field col s6">
+				<input id="nom" type="text" name="nom" ngModel required>
+				<label for="nom">Nom</label>
+			</div>
+			<div class="input-field col s6">
+				<input id="lieu" type="text" name="lieu" class="validate" ngModel required>
+				<label for="lieu">Lieu</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+				<input id="nombre" type="number" name="nombre" class="validate" ngModel required>
+				<label for="nombre">Nombre</label>
+			</div>
+			<div class="input-field col s6">
+				<label for="categorie"></label>
+				<select name="categorie" id="categorie" class="browser-default" ngModel required>
+					<option value="">Sélectionnez une catégorie</option>
+					<option *ngFor="let categorie of categories" [value]="categorie.id">{{ categorie.nom }}</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+				<input id="date_debut_activite" type="text" name="date_debut_activite"
+					class="validate datepicker-date-debut" [(ngModel)]="date_debut_activite">
+				<label for="date_debut_activite">Date de début</label>
+			</div>
+			<div class="input-field col s6">
+				<input id="date_fin_activite" type="text" name="date_fin_activite" class="validate datepicker-date-fin"
+					[(ngModel)]="date_fin_activite">
+				<label for="date_fin_activite">Date de fin</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<textarea id="description" type="password" name="description" class="validate" ngModel required>
+				</textarea>
+				<label for="confirm-password">Description</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s4 push-s4 push-m4 push-l4">
+				<button type="submit" class="waves-effect waves-light btn-large red lighten-1"
+					[disabled]="faddactivite.invalid">Valider <i class="material-icons right">send</i></button>
+			</div>
+		</div>
+	</form>
+</div>
