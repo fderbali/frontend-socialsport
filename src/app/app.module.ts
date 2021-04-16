@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +20,9 @@ import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr);
 
 @NgModule({
 	declarations: [
@@ -46,7 +49,8 @@ import { HttpClientModule } from '@angular/common/http';
 	],
 	providers: [
 		AuthService,
-		AuthGuardService
+		AuthGuardService,
+		{ provide: LOCALE_ID, useValue: "fr-CA" }
 	],
 	bootstrap: [AppComponent]
 })

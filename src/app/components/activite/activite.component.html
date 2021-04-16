@@ -1,3 +1,24 @@
-<p>activite works!</p>
-
-mon id est {{ id }}
+<div class="row">
+	<div class="col s6 m6 l6 push-s3 push-m3 push-l3">
+		<div class="card hoverable">
+			<div class="card-image">
+				<img [src]="getActiviteImage(activite.id_categorie)">
+				<span class="card-title"><b>{{ activite.nom }}</b></span>
+				<a class="btn-floating halfway-fab waves-effect waves-light red pulse btn-large"><i
+						class="material-icons">add</i></a>
+			</div>
+			<div class="card-content">
+				<div class="card-panel lime lighten-5 hoverable">{{ activite.description}}</div>
+				<p>Lieu de l'évènement : <b>{{ activite.lieu }}</b></p>
+				<p>Date de fin : <span class="red-text"> {{ activite.debut|date:'fullDate' }} </span></p>
+				<p>Date de fin : <span class="red-text"> {{ activite.fin|date:'fullDate' }} </span></p>
+				<p>Nombre de participants : <b>{{ activite.nombre }} participants</b></p><br>
+				<p class="center-align">
+					<button class="btn waves-effect waves-light" type="submit" name="action">Consulter les participants
+						<i class="material-icons right">send</i>
+					</button>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>

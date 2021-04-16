@@ -9,6 +9,7 @@ import { ActiviteResponse } from '../models/activite/ActiviteResponse';
 export class ActiviteService {
 
 	constructor(private httpClient: HttpClient) { }
+
 	add(values: any) {
 		return new Promise((resolve, reject) => {
 			this.httpClient.post<ActiviteResponse>('http://localhost:3000/api/addactivite', values)
@@ -22,6 +23,7 @@ export class ActiviteService {
 				);
 		});
 	}
+
 	getActivites() {
 		return new Promise((resolve) => {
 			this.httpClient.get<Activite>('http://localhost:3000/api/activite')
@@ -32,5 +34,17 @@ export class ActiviteService {
 				);
 		});
 	}
+
+	getActivite(id: number) {
+		return new Promise((resolve) => {
+			this.httpClient.get<Activite>('http://localhost:3000/api/activite/' + id)
+				.subscribe(
+					(response) => {
+						resolve(response);
+					}
+				);
+		});
+	}
+
 }
 
