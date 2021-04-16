@@ -10,6 +10,7 @@ export class AuthService {
 	isAuth: boolean = false;
 	message: string = "";
 	userConnected: string = "";
+	id: number = 0;
 	constructor(private httpClient: HttpClient) {
 	}
 
@@ -20,6 +21,7 @@ export class AuthService {
 					(response) => {
 						this.isAuth = true;
 						this.userConnected = values.email;
+						this.id = response.id;
 						resolve(response.message);
 					}, (error) => {
 						this.isAuth = false;
@@ -45,6 +47,7 @@ export class AuthService {
 						this.isAuth = response.success;
 						this.message = response.message;
 						this.userConnected = values.email;
+						this.id = response.insert_id;
 						resolve(this.message);
 					},
 					(error) => {

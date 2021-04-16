@@ -37,7 +37,7 @@ export class RegisterComponent implements OnInit {
 							M.Dropdown.init(elemDropdown, {
 								coverTrigger: false
 							});
-						}, 1000);
+						}, 3000);
 					});
 				} else {
 					M.toast({ html: message, classes: 'rounded red', displayLength: 7000 });

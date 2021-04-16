@@ -1,0 +1,5 @@
+.card {
+	background-image: url("/assets/images/welcome.png");
+	background-repeat: repeat-x;
+	font-size: 20px;
+}

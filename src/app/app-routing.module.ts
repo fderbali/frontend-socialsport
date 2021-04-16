@@ -25,6 +25,7 @@ const routes: Routes = [
 	{ path: "activite/:id", component: ActiviteComponent },
 	{ path: "membre/:id", canActivate: [AuthGuardService], component: MembreComponent },
 	{ path: "courriel/:id", canActivate: [AuthGuardService], component: CourrielComponent },
+	{ path: "membre/:id/activites", canActivate: [AuthGuardService], component: ActivitesComponent },
 	{ path: "not-found", component: FourOFourComponent },
 	{ path: "**", redirectTo: '/not-found' }
 ];
