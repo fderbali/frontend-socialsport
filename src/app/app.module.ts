@@ -22,6 +22,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 registerLocaleData(localeFr);
 
 @NgModule({
@@ -45,7 +46,8 @@ registerLocaleData(localeFr);
 		BrowserModule,
 		AppRoutingModule,
 		FormsModule,
-		HttpClientModule
+		HttpClientModule,
+		BrowserAnimationsModule
 	],
 	providers: [
 		AuthService,

@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Activite } from '../models/activite/activite';
 import { ActiviteResponse } from '../models/activite/ActiviteResponse';
-
 @Injectable({
 	providedIn: 'root'
 })
@@ -46,5 +45,15 @@ export class ActiviteService {
 		});
 	}
 
+	getActivitesByMembre(id: number) {
+		return new Promise((resolve) => {
+			this.httpClient.get<Activite>('http://localhost:3000/api/membre/' + id + '/activites')
+				.subscribe(
+					(response) => {
+						resolve(response);
+					}
+				);
+		});
+	}
 }
 

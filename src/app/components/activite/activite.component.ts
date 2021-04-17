@@ -1,12 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { translate } from 'src/app/animations/animation';
+import { fade } from 'src/app/animations/fade';
 import { Activite } from 'src/app/models/activite/activite';
 import { ActiviteService } from 'src/app/services/activite.service';
 
 @Component({
 	selector: 'app-activite',
 	templateUrl: './activite.component.html',
-	styleUrls: ['./activite.component.css']
+	styleUrls: ['./activite.component.css'],
+	animations: [
+		translate, fade
+	]
 })
 export class ActiviteComponent implements OnInit {
 

@@ -1,21 +1,34 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ActiviteService } from 'src/app/services/activite.service';
+import { fade } from 'src/app/animations/fade';
+import { translate } from 'src/app/animations/animation';
 
 @Component({
 	selector: 'app-activites',
 	templateUrl: './activites.component.html',
-	styleUrls: ['./activites.component.css']
+	styleUrls: ['./activites.component.css'],
+	animations: [
+		fade, translate
+	]
 })
 export class ActivitesComponent implements OnInit {
 
 	activites: any = [];
+	id_membre: number = 0;
 
-	constructor(private activiteService: ActiviteService) { }
+	constructor(private activiteService: ActiviteService, private router: ActivatedRoute) { }
 
 	ngOnInit(): void {
 		this.activiteService.getActivites().then((activites) => {
 			this.activites = activites;
 		});
+		this.id_membre = this.router.snapshot.params['id'];
+		if (this.id_membre != 0) {
+			this.activiteService.getActivitesByMembre(this.id_membre).then((activites) => {
+				this.activites = activites;
+			});
+		}
 	}
 	getActiviteImage(id: number) {
 		switch (id) {
