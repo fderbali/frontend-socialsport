@@ -47,10 +47,14 @@ export class ActiviteService {
 
 	getActivitesByMembre(id: number) {
 		return new Promise((resolve) => {
-			this.httpClient.get<Activite>('http://localhost:3000/api/membre/' + id + '/activites')
+			this.httpClient.get<[Activite]>('http://localhost:3000/api/membre/' + id + '/activites')
 				.subscribe(
 					(response) => {
-						resolve(response);
+						if (Array.isArray(response)) {
+							resolve(response);
+						} else {
+							resolve(false);
+						}
 					}
 				);
 		});

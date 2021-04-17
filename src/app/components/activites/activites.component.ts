@@ -17,17 +17,25 @@ export class ActivitesComponent implements OnInit {
 
 	activites: any;
 	id_membre: number = 0;
+	error_msg_no_activities: number = 0;
 
 	constructor(private activiteService: ActiviteService, private router: ActivatedRoute) { }
 
 	ngOnInit(): void {
 		this.activiteService.getActivites().then((activites) => {
 			this.activites = activites;
+			this.error_msg_no_activities = 0;
 		});
 		this.id_membre = this.router.snapshot.params['id'];
 		if (this.id_membre != undefined) {
 			this.activiteService.getActivitesByMembre(this.id_membre).then((activites) => {
-				this.activites = activites;
+				if (activites) {
+					this.activites = activites;
+					this.error_msg_no_activities = 0;
+				} else {
+					this.activites = [];
+					this.error_msg_no_activities = 1;
+				}
 			});
 		}
 	}

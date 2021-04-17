@@ -3,13 +3,14 @@ import { AuthService } from 'src/app/services/auth.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { rotate } from 'src/app/animations/rotate';
+import { fade } from 'src/app/animations/fade';
 declare let M: any;
 @Component({
 	selector: 'app-login',
 	templateUrl: './login.component.html',
 	styleUrls: ['./login.component.css'],
 	animations: [
-		rotate
+		rotate, fade
 	]
 })
 export class LoginComponent implements OnInit {

@@ -17,8 +17,9 @@
 					<li *ngIf="membre.is_public == 'N'">Profil privé</li>
 				</ul>
 			</div>
-			<div class="card-action" *ngIf="membre.is_public == 'Y'">
-				<a routerLink="/membre/{{ membre.id }}/activites">Activités du membre</a>
+			<div class="card-action center-align" *ngIf="membre.is_public == 'Y'">
+				<a routerLink="/membre/{{ membre.id }}/activites">Activités du membre<i
+						class="material-icons">directions_walk</i></a>
 			</div>
 		</div>
 		<p class="center-align">
