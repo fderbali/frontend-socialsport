@@ -1,11 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { translate } from 'src/app/animations/animation';
+import { fade } from 'src/app/animations/fade';
+import { rotate } from 'src/app/animations/rotate';
 import { AuthService } from 'src/app/services/auth.service';
 import { MembreService } from 'src/app/services/membre.service';
 
 @Component({
 	selector: 'app-myprofile',
 	templateUrl: './myprofile.component.html',
-	styleUrls: ['./myprofile.component.css']
+	styleUrls: ['./myprofile.component.css'],
+	animations: [
+		translate, fade, rotate
+	]
 })
 export class MyprofileComponent implements OnInit {
 

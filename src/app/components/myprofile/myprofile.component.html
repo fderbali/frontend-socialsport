@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col s8 m8 l8 push-s2 push-m2 push-l2">
+	<div class="col s8 m8 l8 push-s2 push-m2 push-l2" @fade @translate @rotate>
 		<div class="card darken-1 hoverable">
 			<div class="card-content">
 				<span class="card-title center-align">Bonjour <b>{{ membre.prenom}} {{ membre.nom }}</b> !</span>
@@ -18,12 +18,10 @@
 					<li *ngIf="membre.is_public == 'N'">Profil privé</li>
 				</ul>
 			</div>
-			<div class="card-action" *ngIf="membre.is_public == 'Y'">
-				<a routerLink="/membre/{{ membre.id }}/activites">Activités du membre</a>
-			</div>
 		</div>
 		<p class="center-align">
-			<a routerLink='/membres' class="btn waves-effect waves-light" type="submit" name="action">Consultetr mes
+			<a routerLink='/membre/{{ membre.id }}/activites' class="btn waves-effect waves-light" type="submit"
+				name="action">Consultetr mes
 				activités
 				<i class="material-icons right">send</i>
 			</a>

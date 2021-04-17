@@ -14,7 +14,6 @@ export class MembreService {
 			this.httpClient.get<Membre>('http://localhost:3000/api/membre/' + id)
 				.subscribe(
 					(response) => {
-						console.log(response);
 						resolve(response);
 					}
 				);

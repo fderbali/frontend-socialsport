@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ActiviteService } from 'src/app/services/activite.service';
 import { fade } from 'src/app/animations/fade';
 import { translate } from 'src/app/animations/animation';
+import { Activite } from 'src/app/models/activite/activite';
 
 @Component({
 	selector: 'app-activites',
@@ -14,7 +15,7 @@ import { translate } from 'src/app/animations/animation';
 })
 export class ActivitesComponent implements OnInit {
 
-	activites: any = [];
+	activites: any;
 	id_membre: number = 0;
 
 	constructor(private activiteService: ActiviteService, private router: ActivatedRoute) { }
@@ -24,7 +25,7 @@ export class ActivitesComponent implements OnInit {
 			this.activites = activites;
 		});
 		this.id_membre = this.router.snapshot.params['id'];
-		if (this.id_membre != 0) {
+		if (this.id_membre != undefined) {
 			this.activiteService.getActivitesByMembre(this.id_membre).then((activites) => {
 				this.activites = activites;
 			});

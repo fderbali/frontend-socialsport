@@ -25,7 +25,7 @@ export class ActiviteService {
 
 	getActivites() {
 		return new Promise((resolve) => {
-			this.httpClient.get<Activite>('http://localhost:3000/api/activite')
+			this.httpClient.get<[Activite]>('http://localhost:3000/api/activite')
 				.subscribe(
 					(response) => {
 						resolve(response);

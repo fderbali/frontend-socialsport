@@ -19,10 +19,16 @@ export class AuthService {
 			this.httpClient.post<RegsiterResponse>('http://localhost:3000/api/login', values)
 				.subscribe(
 					(response) => {
-						this.isAuth = true;
-						this.userConnected = values.email;
-						this.id = response.id;
-						resolve(response.message);
+						if (response.id) {
+							this.isAuth = true;
+							this.userConnected = values.email;
+							this.id = response.id;
+							resolve(response.message);
+						} else {
+							this.isAuth = false;
+							this.message = response.message;
+							resolve(response.message);
+						}
 					}, (error) => {
 						this.isAuth = false;
 						this.message = error.message;

@@ -2,11 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { rotate } from 'src/app/animations/rotate';
 declare let M: any;
 @Component({
 	selector: 'app-login',
 	templateUrl: './login.component.html',
-	styleUrls: ['./login.component.css']
+	styleUrls: ['./login.component.css'],
+	animations: [
+		rotate
+	]
 })
 export class LoginComponent implements OnInit {
 
