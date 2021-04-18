@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Activite } from '../models/activite/activite';
 import { ActiviteResponse } from '../models/activite/ActiviteResponse';
+import { GlobalResponse } from '../models/GlobalResponse';
 @Injectable({
 	providedIn: 'root'
 })
@@ -58,6 +59,28 @@ export class ActiviteService {
 					}
 				);
 		});
+	}
+
+	inscrire(id_membre: number, id_activite: number) {
+		return new Promise((resolve) => {
+			this.httpClient.post<GlobalResponse>('http://localhost:3000/api/membre/inscrire', { 'id_membre': id_membre, 'id_activite': id_activite })
+				.subscribe(
+					(response) => {
+						resolve(response.message);
+					}
+				);
+		})
+	}
+
+	check_inscription(id_membre: number, id_activite: number) {
+		return new Promise((resolve) => {
+			this.httpClient.post<GlobalResponse>('http://localhost:3000/api/membre/check_inscription', { 'id_membre': id_membre, 'id_activite': id_activite })
+				.subscribe(
+					(response) => {
+						resolve(response.subscribed);
+					}
+				);
+		})
 	}
 }
 

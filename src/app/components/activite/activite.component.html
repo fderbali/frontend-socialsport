@@ -4,8 +4,16 @@
 			<div class="card-image">
 				<img [src]="getActiviteImage(activite.id_categorie)">
 				<span class="card-title"><b>{{ activite.nom }}</b></span>
-				<a class="btn-floating halfway-fab waves-effect waves-light red pulse btn-large"><i
+
+				<a *ngIf="member_is_subscribed_to_current_activite === false"
+					class="btn-floating halfway-fab waves-effect waves-light lime pulse btn-large tooltipped"
+					data-position="top" data-tooltip="S'inscrire à cette activité" (click)="inscrire(activite.id)"><i
 						class="material-icons">add</i></a>
+
+				<a *ngIf="member_is_subscribed_to_current_activite === true"
+					class="btn-floating halfway-fab btn-large waves-effect waves-light pulse red tooltipped"
+					data-position="top" data-tooltip="Se désinscrire de cette activité"
+					(click)="desincrire(activite.id)"><i class="material-icons">close</i></a>
 			</div>
 			<div class="card-content">
 				<div class="card-panel lime lighten-5 hoverable">{{ activite.description}}</div>
@@ -14,7 +22,8 @@
 				<p>Date de fin : <span class="red-text"> {{ activite.fin|date:'fullDate' }} </span></p>
 				<p>Nombre de participants : <b>{{ activite.nombre }} participants</b></p><br>
 				<p class="center-align">
-					<button class="btn waves-effect waves-light" type="submit" name="action">Consulter les participants
+					<button class="btn waves-effect waves-light deep-orange" type="submit" name="action">Consulter les
+						participants
 						<i class="material-icons right">send</i>
 					</button>
 				</p>
