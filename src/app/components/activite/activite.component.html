@@ -22,10 +22,11 @@
 				<p>Date de fin : <span class="red-text"> {{ activite.fin|date:'fullDate' }} </span></p>
 				<p>Nombre de participants : <b>{{ activite.nombre }} participants</b></p><br>
 				<p class="center-align">
-					<button class="btn waves-effect waves-light deep-orange" type="submit" name="action">Consulter les
+					<a class="btn waves-effect waves-light deep-orange"
+						routerLink="/activite/{{ activite.id }}/membres">Consulter les
 						participants
 						<i class="material-icons right">send</i>
-					</button>
+					</a>
 				</p>
 			</div>
 		</div>

@@ -30,4 +30,19 @@ export class MembreService {
 				);
 		});
 	}
+
+	getMembresByActivite(id: number) {
+		return new Promise((resolve) => {
+			this.httpClient.get<[Membre]>('http://localhost:3000/api/activite/' + id + '/membres')
+				.subscribe(
+					(response) => {
+						if (Array.isArray(response)) {
+							resolve(response);
+						} else {
+							resolve(false);
+						}
+					}
+				);
+		});
+	}
 }

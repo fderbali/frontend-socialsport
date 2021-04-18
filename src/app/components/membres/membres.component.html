@@ -1,4 +1,7 @@
-<ul class="collection">
+<div *ngIf="error_msg_no_membres == 1" class="card-panel red white-text center-align"><b> Pas encore de membres inscrits
+		pour cette activité pour le moment</b></div>
+
+<ul *ngIf="error_msg_no_membres == 0" class="collection">
 	<li class="collection-item avatar" *ngFor="let membre of(membres)">
 		<i class="material-icons circle">account_circle</i>
 		<span class="title">{{ membre.nom }}</span>
