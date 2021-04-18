@@ -72,6 +72,17 @@ export class ActiviteService {
 		})
 	}
 
+	desinscrire(id_membre: number, id_activite: number) {
+		return new Promise((resolve) => {
+			this.httpClient.post<GlobalResponse>('http://localhost:3000/api/membre/desinscrire', { 'id_membre': id_membre, 'id_activite': id_activite })
+				.subscribe(
+					(response) => {
+						resolve(response.message);
+					}
+				);
+		})
+	}
+
 	check_inscription(id_membre: number, id_activite: number) {
 		return new Promise((resolve) => {
 			this.httpClient.post<GlobalResponse>('http://localhost:3000/api/membre/check_inscription', { 'id_membre': id_membre, 'id_activite': id_activite })

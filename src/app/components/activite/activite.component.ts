@@ -83,6 +83,14 @@ export class ActiviteComponent implements OnInit {
 		}
 	}
 
-	desincrire(id_activite: number) {
+	desinscrire(id_activite: number) {
+		if (this.authService.isAuth) {
+			this.activiteService.desinscrire(this.authService.id, id_activite).then((response) => {
+				M.toast({ html: response, classes: 'rounded green', displayLength: 7000 });
+				this.check_inscription(this.activite.id);
+			});
+		} else {
+			M.toast({ html: "Veuillez vous connecter d'abord !", classes: 'rounded red', displayLength: 7000 });
+		}
 	}
 }
