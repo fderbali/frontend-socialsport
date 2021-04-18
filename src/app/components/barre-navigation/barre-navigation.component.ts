@@ -10,12 +10,15 @@ declare let M: any;
 export class BarreNavigationComponent implements OnInit {
 	@Input() isAuth: boolean = false;
 	@Input() userConnected: string = "";
+	id: number = 0;
 	constructor(private authService: AuthService, private router: Router) { }
 
 	ngOnInit(): void {
+
 	}
 
 	ngDoCheck(): void {
+		this.id = this.authService.id;
 	}
 
 	onLogout() {
