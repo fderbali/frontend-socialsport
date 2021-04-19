@@ -28,7 +28,7 @@ export class ActiviteComponent implements OnInit {
 		this.activiteService.getActivite(this.id).then((activite) => {
 			this.activite = activite;
 			this.check_inscription(this.id);
-			this.activate_tool_tip();
+			//this.activate_tool_tip();
 		});
 	}
 
@@ -67,7 +67,7 @@ export class ActiviteComponent implements OnInit {
 			this.activiteService.inscrire(this.authService.id, id_activite).then((response) => {
 				M.toast({ html: response, classes: 'rounded green', displayLength: 7000 });
 				this.check_inscription(this.activite.id);
-				this.activate_tool_tip();
+				//this.activate_tool_tip();
 			});
 		} else {
 			M.toast({ html: "Veuillez vous connecter d'abord !", classes: 'rounded red', displayLength: 7000 });
@@ -89,7 +89,7 @@ export class ActiviteComponent implements OnInit {
 			this.activiteService.desinscrire(this.authService.id, id_activite).then((response) => {
 				M.toast({ html: response, classes: 'rounded green', displayLength: 7000 });
 				this.check_inscription(this.activite.id);
-				this.activate_tool_tip();
+				//this.activate_tool_tip();
 			});
 		} else {
 			M.toast({ html: "Veuillez vous connecter d'abord !", classes: 'rounded red', displayLength: 7000 });
