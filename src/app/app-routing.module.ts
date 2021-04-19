@@ -12,6 +12,7 @@ import { MembreComponent } from './components/membre/membre.component';
 import { ActiviteComponent } from './components/activite/activite.component';
 import { FourOFourComponent } from './components/four-o-four/four-o-four.component';
 import { AuthGuardService } from './services/auth-guard.service';
+import { TchatComponent } from './components/tchat/tchat.component';
 
 const routes: Routes = [
 	{ path: "", component: ActivitesComponent },
@@ -27,6 +28,7 @@ const routes: Routes = [
 	{ path: "courriel/:id", canActivate: [AuthGuardService], component: CourrielComponent },
 	{ path: "membre/:id/activites", canActivate: [AuthGuardService], component: ActivitesComponent },
 	{ path: "activite/:id/membres", canActivate: [AuthGuardService], component: MembresComponent },
+	{ path: "tchat", component: TchatComponent },
 	{ path: "not-found", component: FourOFourComponent },
 	{ path: "**", redirectTo: '/not-found' }
 ];

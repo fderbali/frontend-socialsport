@@ -30,6 +30,11 @@
 					Courriels<i class="material-icons left">email</i>
 				</a>
 			</li>
+			<li *ngIf="isAuth" routerLinkActive="active">
+				<a class="waves-effect waves-light" routerLink="tchat">
+					Chat<i class="material-icons left">chat</i>
+				</a>
+			</li>
 			<li *ngIf="!isAuth" routerLinkActive="active">
 				<a class="waves-effect waves-light" routerLink="login">
 					Se connecter<i class="material-icons left">exit_to_app</i>
