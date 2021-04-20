@@ -1,1 +1,22 @@
-<p>courriel works!</p>
+<div class="row">
+	<div class="col s6 m6 l6 push-s3 push-m3 push-l3">
+		<div class="card darken-1 hoverable">
+			<div class="card-content">
+				<p class="card-title center-align"><b>{{ courriel.sujet }}</b></p>
+				<ul>
+					<li>
+						Expéditeur : <a routerLink="/membre/{{ membre_expediteur.id }}">{{ membre_expediteur.prenom }}
+							{{ membre_expediteur.nom }}</a>
+					</li>
+					<li>Message : {{ courriel.message }}</li>
+				</ul>
+			</div>
+		</div>
+		<p class="center-align">
+			<a routerLink='/courriels' class="btn waves-effect waves-light red" type="submit" name="action">Mes
+				courriels
+				<i class="material-icons right">email</i>
+			</a>
+		</p>
+	</div>
+</div>
