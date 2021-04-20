@@ -24,6 +24,7 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TchatComponent } from './components/tchat/tchat.component';
+import { RedigercourrielComponent } from './components/redigercourriel/redigercourriel.component';
 registerLocaleData(localeFr);
 
 @NgModule({
@@ -42,7 +43,8 @@ registerLocaleData(localeFr);
 		MembreComponent,
 		CourrielComponent,
 		FourOFourComponent,
-  TchatComponent
+  TchatComponent,
+  RedigercourrielComponent
 	],
 	imports: [
 		BrowserModule,

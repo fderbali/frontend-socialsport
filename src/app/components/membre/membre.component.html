@@ -16,6 +16,10 @@
 					<li *ngIf="membre.is_public == 'Y'">Profil public</li>
 					<li *ngIf="membre.is_public == 'N'">Profil privé</li>
 				</ul>
+				<a routerLink='/membre/{{ membre.id }}/courriel' class="btn waves-effect waves-light orange"
+					type="submit" name="action">Lui Écrire
+					<i class="material-icons right">mail</i>
+				</a>
 			</div>
 			<div class="card-action center-align" *ngIf="membre.is_public == 'Y'">
 				<a routerLink="/membre/{{ membre.id }}/activites">Activités organisées par ce membre<i
@@ -23,7 +27,8 @@
 			</div>
 		</div>
 		<p class="center-align">
-			<a routerLink='/membres' class="btn waves-effect waves-light" type="submit" name="action">Liste des membres
+			<a routerLink='/membres' class="btn waves-effect waves-light red" type="submit" name="action">Liste des
+				membres
 				<i class="material-icons right">send</i>
 			</a>
 		</p>

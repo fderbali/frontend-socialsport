@@ -1,0 +1,22 @@
+<div class="row">
+	<form class="col s12 hoverable register-form card" (ngSubmit)="onSubmit(ecrirecourriel)" #ecrirecourriel="ngForm">
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="nom" type="text" name="sujet" ngModel required>
+				<label for="nom">Sujet</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<textarea name="message" id="message" cols="30" rows="90" class="validate" ngModel required></textarea>
+				<label for="prenom">Message</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field center-align">
+				<button type="submit" class="waves-effect waves-light btn-large red lighten-1"
+					[disabled]="ecrirecourriel.invalid">Envoyer<i class="material-icons right">send</i></button>
+			</div>
+		</div>
+	</form>
+</div>

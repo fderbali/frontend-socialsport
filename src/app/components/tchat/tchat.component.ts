@@ -39,7 +39,7 @@ export class TchatComponent implements OnInit {
 	}
 
 	updateFeedback(data: any) {
-		this.feedback = `${data} is typing a message`;
+		this.feedback = `${data} tape un message`;
 	}
 
 }
