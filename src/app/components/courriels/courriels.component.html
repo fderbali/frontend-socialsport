@@ -8,11 +8,11 @@
 	<br>
 	<ul class="collection">
 		<li class="collection-item avatar" *ngFor="let courriel of(courriels)">
-			<i *ngIf="courriel.courriel_lu == 'N'" class="material-icons circle">email</i>
-			<i *ngIf="courriel.courriel_lu == 'Y'" class="material-icons circle">drafts</i>
+			<i *ngIf="courriel.courriel_lu == 'N'" class="material-icons circle white-text">email</i>
+			<i *ngIf="courriel.courriel_lu == 'Y'" class="material-icons circle white-text">drafts</i>
 			<span class="title" [ngClass]="{'bold':courriel.courriel_lu == 'N'}">{{ courriel.sujet }}</span>
 			<a routerLink="/courriel/{{ courriel.id }}" class="secondary-content">
-				<i class="material-icons">arrow_forward</i>
+				<i class="material-icons red-text">arrow_forward</i>
 			</a>
 		</li>
 	</ul>
@@ -24,12 +24,12 @@
 	<br>
 	<ul class="collection">
 		<li class="collection-item avatar" *ngFor="let sentcourriel of(sentcourriels)">
-			<i *ngIf="sentcourriel.courriel_lu == 'N'" class="material-icons circle">email</i>
-			<i *ngIf="sentcourriel.courriel_lu == 'Y'" class="material-icons circle">drafts</i>
+			<i *ngIf="sentcourriel.courriel_lu == 'N'" class="material-icons circle white-text">email</i>
+			<i *ngIf="sentcourriel.courriel_lu == 'Y'" class="material-icons circle white-text">drafts</i>
 			<span class="title" [ngClass]="{'bold':sentcourriel.courriel_lu == 'N'}">{{ sentcourriel.sujet }}</span>
 			<span *ngIf="sentcourriel.courriel_lu == 'Y'" class="green-text">&nbsp;&nbsp;Lu</span>
 			<a routerLink="/courriel/{{ sentcourriel.id }}" class="secondary-content">
-				<i class="material-icons">arrow_forward</i>
+				<i class="material-icons red-text">arrow_forward</i>
 			</a>
 		</li>
 	</ul>
