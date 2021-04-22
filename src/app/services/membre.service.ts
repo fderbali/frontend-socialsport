@@ -45,4 +45,14 @@ export class MembreService {
 				);
 		});
 	}
+	getOrganisateur(id_activite: number) {
+		return new Promise((resolve) => {
+			this.httpClient.get<[Membre]>('http://localhost:3000/api/activite/' + id_activite + '/organisateur')
+				.subscribe(
+					(response) => {
+						resolve(response);
+					}
+				);
+		});
+	}
 }

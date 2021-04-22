@@ -5,6 +5,7 @@ import { fade } from 'src/app/animations/fade';
 import { Activite } from 'src/app/models/activite/activite';
 import { ActiviteService } from 'src/app/services/activite.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { MembreService } from 'src/app/services/membre.service';
 declare let M: any;
 @Component({
 	selector: 'app-activite',
@@ -19,8 +20,9 @@ export class ActiviteComponent implements OnInit {
 	id: number = 0;
 	activite: any;
 	member_is_subscribed_to_current_activite: any;
+	organisateur: any;
 
-	constructor(private route: ActivatedRoute, private activiteService: ActiviteService, private authService: AuthService) { }
+	constructor(private route: ActivatedRoute, private activiteService: ActiviteService, private authService: AuthService, private membreService: MembreService) { }
 
 
 	ngOnInit(): void {
@@ -28,14 +30,18 @@ export class ActiviteComponent implements OnInit {
 		this.activiteService.getActivite(this.id).then((activite) => {
 			this.activite = activite;
 			this.check_inscription(this.id);
+			this.membreService.getOrganisateur(this.id).then((organisateur) => {
+				this.organisateur = organisateur;
+			});
 		});
+
 	}
 
-	onHelp(){
+	onHelp() {
 		let elems = document.querySelectorAll('.tap-target');
 		let instances = M.TapTarget.init(elems, {});
 		let instance = M.TapTarget.getInstance(elems[0]);
-  		instance.open();
+		instance.open();
 	}
 
 	getActiviteImage(id: number) {

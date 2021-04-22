@@ -21,6 +21,10 @@
 				<p>Date de fin : <span class="red-text"> {{ activite.debut|date:'fullDate' }} </span></p>
 				<p>Date de fin : <span class="red-text"> {{ activite.fin|date:'fullDate' }} </span></p>
 				<p>Nombre de participants : <b>{{ activite.nombre }} participants</b></p>
+				<p>Organisateur : <b><a class="red-text" routerLink="/membre/{{ organisateur.id }}"> {{
+							organisateur.prenom
+							}} {{
+							organisateur.nom }}</a></b></p>
 				<p><a (click)="onHelp()">Vous voulez vous inscrire / désinscrie ?</a></p><br>
 				<p class="center-align">
 					<a class="btn waves-effect waves-light deep-orange"
@@ -34,10 +38,10 @@
 	</div>
 </div>
 
-  <!-- Tap Target Structure -->
-  <div class="tap-target center-align" data-target="subscribe">
-    <div class="tap-target-content">
-      <h5>Inscription / Désinscription</h5>
-      <p>Cliquez sur ce bouton pour vous inscrire ou vous désincrire à cette activité</p>
-    </div>
-  </div>
+<!-- Tap Target Structure -->
+<div class="tap-target center-align" data-target="subscribe">
+	<div class="tap-target-content">
+		<h5>Inscription / Désinscription</h5>
+		<p>Cliquez sur ce bouton pour vous inscrire ou vous désincrire à cette activité</p>
+	</div>
+</div>
