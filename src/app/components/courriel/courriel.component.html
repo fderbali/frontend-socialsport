@@ -8,6 +8,11 @@
 						Expéditeur : <a routerLink="/membre/{{ membre_expediteur.id }}">{{ membre_expediteur.prenom }}
 							{{ membre_expediteur.nom }}</a>
 					</li>
+					<li>
+						Destinataire : <a routerLink="/membre/{{ membre_destinataire.id }}">{{
+							membre_destinataire.prenom }}
+							{{ membre_destinataire.nom }}</a>
+					</li>
 					<li>Message : {{ courriel.message }}</li>
 				</ul>
 			</div>

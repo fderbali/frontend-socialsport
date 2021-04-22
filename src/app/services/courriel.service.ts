@@ -37,6 +37,21 @@ export class CourrielService {
 		});
 	}
 
+	getSentCourriels(id: number) {
+		return new Promise((resolve) => {
+			this.httpClient.get<[Courriel]>('http://localhost:3000/api/membre/' + id + '/sentcourriels')
+				.subscribe(
+					(response) => {
+						if (Array.isArray(response)) {
+							resolve(response);
+						} else {
+							resolve(false);
+						}
+					}
+				);
+		});
+	}
+
 	getCourriel(id: number) {
 		return new Promise((resolve) => {
 			this.httpClient.get<Courriel>('http://localhost:3000/api/courriel/' + id)

@@ -4,3 +4,6 @@
 .collection .collection-item.avatar {
 	line-height: 2.5rem;
 }
+.bold {
+	font-weight: bold;
+}

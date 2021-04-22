@@ -11,8 +11,10 @@ import { CourrielService } from 'src/app/services/courriel.service';
 export class CourrielsComponent implements OnInit {
 
 	courriels: any = [];
+	sentcourriels: any = [];
 	id_activite: number = 0;
 	error_msg_no_courriels = 0;
+	error_msg_no_sent_courriels = 0;
 	constructor(private courrielService: CourrielService, private route: ActivatedRoute, private authService: AuthService) { }
 
 	ngOnInit(): void {
@@ -23,6 +25,15 @@ export class CourrielsComponent implements OnInit {
 			} else {
 				this.courriels = [];
 				this.error_msg_no_courriels = 1;
+			}
+		});
+		this.courrielService.getSentCourriels(this.authService.id).then((sentcourriels) => {
+			if (sentcourriels) {
+				this.sentcourriels = sentcourriels;
+				this.error_msg_no_sent_courriels = 0;
+			} else {
+				this.sentcourriels = [];
+				this.error_msg_no_sent_courriels = 1;
 			}
 		});
 	}
