@@ -7,10 +7,10 @@ import { LoginResponse } from '../models/login-response-model/login-response';
 	providedIn: 'root'
 })
 export class AuthService {
-	isAuth: boolean = true;
+	isAuth: boolean = false;
 	message: string = "";
-	userConnected: string = "fahmiderbali@gmail.com";
-	id: number = 140;
+	userConnected: string = "";
+	id: number = 0;
 	constructor(private httpClient: HttpClient) {
 	}
 

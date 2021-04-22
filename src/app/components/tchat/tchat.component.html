@@ -1,7 +1,7 @@
 <div id="chat-applicaton">
 	<h2>Tchat</h2>
 	<div id="chat-window">
-		<div id="output" *ngFor="let data of output">
+		<div class="ligne_chat" id="output" *ngFor="let data of output">
 			<p><strong>{{data.handle}} : </strong>{{data.message}}</p>
 		</div>
 		<div id="feedback">

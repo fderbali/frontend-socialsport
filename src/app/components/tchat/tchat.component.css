@@ -1,3 +1,6 @@
 #chat-window {
 	min-height: 200px;
 }
+#chat-window > div:odd{
+	background-color: orange;
+}

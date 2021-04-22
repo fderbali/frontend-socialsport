@@ -5,12 +5,12 @@
 				<img [src]="getActiviteImage(activite.id_categorie)">
 				<span class="card-title"><b>{{ activite.nom }}</b></span>
 
-				<a *ngIf="member_is_subscribed_to_current_activite === false"
+				<a id="subscribe" *ngIf="member_is_subscribed_to_current_activite === false"
 					class="btn-floating halfway-fab waves-effect waves-light lime pulse btn-large tooltipped"
 					data-position="top" data-tooltip="S'inscrire à cette activité" (click)="inscrire(activite.id)"><i
 						class="material-icons">add</i></a>
 
-				<a *ngIf="member_is_subscribed_to_current_activite === true"
+				<a id="subscribe" *ngIf="member_is_subscribed_to_current_activite === true"
 					class="btn-floating halfway-fab btn-large waves-effect waves-light pulse red tooltipped"
 					data-position="top" data-tooltip="Se désinscrire de cette activité"
 					(click)="desinscrire(activite.id)"><i class="material-icons">close</i></a>
@@ -20,7 +20,8 @@
 				<p>Lieu de l'évènement : <b>{{ activite.lieu }}</b></p>
 				<p>Date de fin : <span class="red-text"> {{ activite.debut|date:'fullDate' }} </span></p>
 				<p>Date de fin : <span class="red-text"> {{ activite.fin|date:'fullDate' }} </span></p>
-				<p>Nombre de participants : <b>{{ activite.nombre }} participants</b></p><br>
+				<p>Nombre de participants : <b>{{ activite.nombre }} participants</b></p>
+				<p><a (click)="onHelp()">Vous voulez vous inscrire / désinscrie ?</a></p><br>
 				<p class="center-align">
 					<a class="btn waves-effect waves-light deep-orange"
 						routerLink="/activite/{{ activite.id }}/membres">Consulter les
@@ -32,3 +33,11 @@
 		</div>
 	</div>
 </div>
+
+  <!-- Tap Target Structure -->
+  <div class="tap-target center-align" data-target="subscribe">
+    <div class="tap-target-content">
+      <h5>Inscription / Désinscription</h5>
+      <p>Cliquez sur ce bouton pour vous inscrire ou vous désincrire à cette activité</p>
+    </div>
+  </div>
